@@ -1,0 +1,488 @@
+Create a professional Excel Freelancing Portfolio Workbook for me.
+
+I am a beginner-to-intermediate Excel freelancer who uses Excel with AI tools such as Claude and ChatGPT to create practical business spreadsheets, dashboards, data-cleaning systems and reports.
+
+IMPORTANT:
+
+* The portfolio must look like a real professional freelancer portfolio.
+* Do NOT make it overly complicated.
+* It must be usable and editable on a phone in Microsoft Excel.
+* Use clean formatting, consistent fonts, proper spacing, professional tables and a modern business style.
+* Do not use fake client testimonials, fake companies or claim that these are real client projects.
+* Clearly label the projects as “Practice / Portfolio Projects”.
+* Use realistic sample data where required.
+* Every formula must be correct and testable.
+* Keep the workbook easy to understand for a potential client.
+
+Create ONE main workbook called:
+
+“Ujef Khan – Excel & AI Portfolio”
+
+Create these sheets:
+
+1. COVER
+2. ABOUT ME
+3. SERVICES
+4. PROJECT 1 – SALES & PROFIT
+5. PROJECT 2 – INVENTORY
+6. PROJECT 3 – EMPLOYEE SALARY
+7. PROJECT 4 – SALES DASHBOARD
+8. PROJECT 5 – DATA CLEANING
+9. AI WORKFLOW
+10. CONTACT
+
+---
+
+## SHEET 1 – COVER
+
+Create a professional cover page with:
+
+Ujef Khan
+
+EXCEL & AI DATA SOLUTIONS
+
+Subtitle:
+“Excel Dashboards • Data Cleaning • Business Reports • Automation”
+
+Add a short statement:
+
+“I create practical, accurate and easy-to-use Excel solutions for small businesses and professionals, using Excel with AI-assisted workflows.”
+
+Add:
+
+Portfolio Projects: 5
+Tools: Microsoft Excel, Google Sheets, Claude, ChatGPT
+Service Type: Freelance / Remote
+
+Add a clean “View Projects” section listing all 5 projects.
+
+Do not add fake ratings or fake client reviews.
+
+---
+
+## SHEET 2 – ABOUT ME
+
+Title:
+ABOUT ME
+
+Write a concise professional introduction:
+
+“I help businesses organize, clean, analyze and present their data using Excel and AI-assisted workflows.”
+
+Create sections:
+
+WHAT I CAN DO
+
+* Excel data cleaning
+* Excel formulas
+* Sales tracking
+* Inventory management
+* Employee attendance and salary calculations
+* Excel dashboards
+* Business reports
+* PDF/Image data conversion
+* Data analysis
+* Spreadsheet formatting
+
+TOOLS
+
+* Microsoft Excel
+* Google Sheets
+* Claude
+* ChatGPT
+
+WORK STYLE
+
+* Accurate
+* Organized
+* Clear communication
+* Client-focused
+* Data verification before delivery
+
+Important:
+Do not exaggerate my experience or claim professional experience I have not provided.
+
+---
+
+## SHEET 3 – SERVICES
+
+Create a professional service table.
+
+Columns:
+
+Service
+What I Deliver
+Suitable For
+Difficulty
+
+Include:
+
+1. Excel Data Cleaning
+2. Excel Formula Fixing
+3. Sales Tracker
+4. Inventory Management
+5. Employee Attendance & Salary
+6. Excel Dashboard
+7. Business Data Analysis
+8. PDF/Image to Excel
+9. Spreadsheet Formatting
+10. AI-Assisted Excel Analysis
+
+For each service write a short, client-friendly description.
+
+---
+
+## SHEET 4 – PROJECT 1 – SALES & PROFIT MANAGER
+
+Create a realistic sample small-business sales dataset.
+
+Columns:
+
+Date
+Product
+Category
+Quantity
+Purchase Price
+Selling Price
+Total Sales
+Total Cost
+Profit
+Profit %
+
+Use formulas for:
+
+Total Sales = Quantity × Selling Price
+Total Cost = Quantity × Purchase Price
+Profit = Total Sales - Total Cost
+Profit % = Profit / Total Cost × 100
+
+Create summary KPI boxes:
+
+TOTAL SALES
+TOTAL COST
+TOTAL PROFIT
+AVERAGE PROFIT %
+
+Add:
+
+Top Product by Sales
+Top Product by Profit
+
+Make the table clean and mobile-friendly.
+
+Label this:
+
+“Portfolio Project – Practice Dataset”
+
+---
+
+## SHEET 5 – PROJECT 2 – INVENTORY MANAGEMENT
+
+Create a realistic inventory management system.
+
+Columns:
+
+Product ID
+Product Name
+Category
+Supplier
+Purchase Price
+Selling Price
+Current Stock
+Reorder Level
+Stock Value
+Potential Sales
+Potential Profit
+Stock Status
+
+Formulas:
+
+Stock Value = Purchase Price × Current Stock
+
+Potential Sales = Selling Price × Current Stock
+
+Potential Profit = Potential Sales - Stock Value
+
+Stock Status:
+If Current Stock <= Reorder Level:
+“REORDER”
+Otherwise:
+“OK”
+
+Add summary:
+
+Total Products
+Total Inventory Value
+Products Requiring Reorder
+Potential Profit
+
+Use clear conditional formatting for REORDER status.
+
+---
+
+## SHEET 6 – PROJECT 3 – EMPLOYEE ATTENDANCE & SALARY
+
+Create a realistic sample employee dataset.
+
+Columns:
+
+Employee ID
+Employee Name
+Department
+Monthly Salary
+Working Days
+Present Days
+Absent Days
+Overtime Hours
+Daily Salary
+Basic Earned Salary
+Overtime Payment
+Final Salary
+
+Formulas:
+
+Absent Days = Working Days - Present Days
+
+Daily Salary = Monthly Salary / Working Days
+
+Basic Earned Salary = Present Days × Daily Salary
+
+Overtime Payment = Overtime Hours × Overtime Rate
+
+Final Salary = Basic Earned Salary + Overtime Payment
+
+Create a clearly visible Overtime Rate input cell.
+
+Add summary:
+
+Total Employees
+Total Salary
+Total Absent Days
+Total Overtime Hours
+
+---
+
+## SHEET 7 – PROJECT 4 – SALES DASHBOARD
+
+Create the most visually impressive project in the portfolio.
+
+Create a realistic sample dataset with at least 100 rows.
+
+Columns:
+
+Date
+Order ID
+Customer
+Product
+Category
+Region
+Salesperson
+Quantity
+Unit Price
+Unit Cost
+Revenue
+Cost
+Profit
+
+Use formulas for:
+
+Revenue = Quantity × Unit Price
+
+Cost = Quantity × Unit Cost
+
+Profit = Revenue - Cost
+
+Create a professional dashboard containing:
+
+TOTAL REVENUE
+TOTAL COST
+TOTAL PROFIT
+TOTAL ORDERS
+TOTAL QUANTITY
+
+Charts:
+
+1. Monthly Revenue
+2. Sales by Product
+3. Sales by Region
+4. Profit by Category
+
+Add sections:
+
+TOP PRODUCT
+TOP REGION
+TOP SALESPERSON
+
+Add a BUSINESS INSIGHTS section.
+
+The insights must be calculated from the data and must NOT be invented.
+
+Example format:
+
+“Top-performing product: ______”
+“Highest-revenue region: ______”
+“Highest-profit category: ______”
+
+Make this dashboard clean, professional and easy to understand.
+
+---
+
+## SHEET 8 – PROJECT 5 – DATA CLEANING
+
+Create a before-and-after data cleaning demonstration.
+
+Create messy sample customer data containing realistic issues such as:
+
+* Extra spaces
+* Different capitalization
+* Duplicate names
+* Inconsistent phone formatting
+* Inconsistent dates
+* Blank cells
+* Duplicate records
+
+Create:
+
+SECTION A – RAW DATA
+
+SECTION B – CLEANED DATA
+
+SECTION C – CLEANING ACTIONS
+
+Show:
+
+Problem
+Action Taken
+Excel/AI Method
+
+Examples:
+
+Extra spaces → TRIM
+Different capitalization → PROPER
+Duplicate records → Remove Duplicates
+Inconsistent dates → Standardized Date Format
+Blank values → Identified for Review
+
+Do NOT silently invent missing customer information.
+
+---
+
+## SHEET 9 – AI WORKFLOW
+
+Create a professional explanation of how AI is used with Excel.
+
+Title:
+
+MY AI-ASSISTED EXCEL WORKFLOW
+
+Create this process:
+
+CLIENT DATA
+↓
+DATA INSPECTION
+↓
+AI-ASSISTED ANALYSIS
+↓
+EXCEL CLEANING
+↓
+FORMULAS & CALCULATIONS
+↓
+DASHBOARD / REPORT
+↓
+MANUAL VERIFICATION
+↓
+FINAL DELIVERY
+
+Explain that AI is used to assist with:
+
+* Formula suggestions
+* Data analysis
+* Identifying possible inconsistencies
+* Dashboard planning
+* Business insights
+* Documentation
+
+Important:
+State that final calculations and client data are manually verified before delivery.
+
+Add a section:
+
+“AI PROMPT EXAMPLES”
+
+Include 5 practical prompts for:
+
+1. Formula creation
+2. Data cleaning
+3. Dashboard planning
+4. Data analysis
+5. Error checking
+
+---
+
+## SHEET 10 – CONTACT
+
+Create a clean contact page.
+
+Name:
+Ujef Khan
+
+Title:
+Excel & AI Data Freelancer
+
+Services:
+Excel Dashboards
+Data Cleaning
+Spreadsheet Automation
+Excel Reports
+Data Analysis
+
+Add placeholders:
+
+Email: [Your Email]
+Fiverr: [Your Fiverr Profile]
+LinkedIn: [Your LinkedIn Profile]
+
+Do not invent contact information.
+
+Add:
+
+“Available for freelance Excel and data projects.”
+
+---
+
+## DESIGN REQUIREMENTS
+
+Use one consistent professional design throughout the workbook.
+
+Requirements:
+
+* Clean header hierarchy
+* Consistent font
+* Proper column widths
+* Freeze important headers where useful
+* Currency formatting
+* Percentage formatting
+* Date formatting
+* Number formatting
+* Conditional formatting where useful
+* Professional KPI cards
+* Clear section titles
+* Avoid excessive decoration
+* Avoid merged cells where they interfere with sorting/filtering
+* Keep important information visible on mobile
+* Make formulas easy to inspect
+
+Most important:
+
+The portfolio should look like something I can show to a potential Fiverr, Upwork or direct client.
+
+Do not make unsupported claims about my experience.
+
+At the end, provide a short checklist showing:
+
+✓ Formulas verified
+✓ Sample data verified
+✓ Dashboard verified
+✓ Formatting checked
+✓ Mobile readability checked
+✓ Portfolio-ready

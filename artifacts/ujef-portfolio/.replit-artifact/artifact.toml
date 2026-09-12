@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Ujef Khan Portfolio"
+description = "A polished personal portfolio for Ujef Khan, presenting coding and Excel data-automation work through an interactive 3D-inspired experience."
+version = "1.0.0"
+id = "artifacts/ujef-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25671
+
+[services.development]
+run = "pnpm --filter @workspace/ujef-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ujef-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ujef-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25671"
+BASE_PATH = "/"
