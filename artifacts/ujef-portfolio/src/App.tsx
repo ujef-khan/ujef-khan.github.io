@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ArrowDown, ArrowUpRight, Check, Code2, Copy, Download, FileSpreadsheet, Mail, Menu, Phone, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Check, Code2, Copy, Download, FileSpreadsheet, Linkedin, Mail, Menu, Phone, X } from 'lucide-react';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -110,7 +110,7 @@ function Home() {
                 <button className="btn-primary" type="button" onClick={() => goTo('work')} data-testid="button-explore-work">Explore the work <ArrowDown size={15} /></button>
                 <a className="btn-ghost" href={resumePath} target="_blank" rel="noreferrer" data-testid="link-view-resume"><Download size={15} /> View resume</a>
               </div>
-              <div className="hero-meta"><span>Based in Uttar Pradesh</span><span>Hindi</span><span>Available for collaboration</span></div>
+              <div className="hero-meta"><span>Based in Uttar Pradesh</span><span>Hindi &amp; English</span><span className="availability">Available for collaboration</span></div>
             </div>
             <div className="scene reveal delay-2" aria-label="Abstract dimensional dashboard illustration">
               <div className="scene-dot" /><div className="scene-grid" /><div className="scene-orbit" />
@@ -159,7 +159,7 @@ function Home() {
         </section>
 
         <section className="section container-wide" id="contact" aria-labelledby="contact-title">
-          <div className="contact-card"><SectionLabel>Open to the next useful problem</SectionLabel><h2 id="contact-title" className="display">Have a spreadsheet<br />or site to untangle?</h2><p>Share the context, the current mess, or simply what you wish worked better. I’m available for freelance Excel and data projects, as well as thoughtful web work.</p><div className="hero-actions"><a className="btn-primary" href="mailto:ujefkhan1786@gmail.com" data-testid="link-email-cta">Start with an email <Mail size={15} /></a><a className="btn-ghost" href={resumePath} download data-testid="link-download-resume"><Download size={15} /> Download resume</a></div><div className="contact-links"><a className="contact-link" href="mailto:ujefkhan1786@gmail.com" data-testid="link-email"><Mail size={14} /> ujefkhan1786@gmail.com</a><a className="contact-link" href="tel:9758842011" data-testid="link-phone"><Phone size={14} /> 9758842011</a><button className="contact-link" type="button" onClick={copyEmail} data-testid="button-copy-email">{copied ? <Check size={14} /> : <Copy size={14} />} {copied ? 'Email copied' : 'Copy email'}</button></div></div>
+          <div className="contact-card"><SectionLabel>Open to the next useful problem</SectionLabel><h2 id="contact-title" className="display">Have a spreadsheet<br />or site to untangle?</h2><p>Share the context, the current mess, or simply what you wish worked better. I’m available for freelance Excel and data projects, as well as thoughtful web work.</p><div className="hero-actions"><a className="btn-primary" href="mailto:ujefkhan1786@gmail.com" data-testid="link-email-cta">Start with an email <Mail size={15} /></a><a className="btn-ghost" href={resumePath} download data-testid="link-download-resume"><Download size={15} /> Download resume</a></div><div className="contact-links"><a className="contact-link" href="mailto:ujefkhan1786@gmail.com" data-testid="link-email"><Mail size={14} /> ujefkhan1786@gmail.com</a><a className="contact-link" href="tel:9758842011" data-testid="link-phone"><Phone size={14} /> 9758842011</a><a className="contact-link" href="https://www.linkedin.com/in/ujef-khan-2614a63a5?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" data-testid="link-linkedin"><Linkedin size={14} /> LinkedIn</a><button className="contact-link" type="button" onClick={copyEmail} data-testid="button-copy-email">{copied ? <Check size={14} /> : <Copy size={14} />} {copied ? 'Email copied' : 'Copy email'}</button></div></div>
         </section>
       </main>
 
