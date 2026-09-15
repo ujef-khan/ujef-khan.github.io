@@ -43,7 +43,7 @@ jobs:
       - name: Upload portfolio files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: artifacts/ujef-portfolio/dist
+          path: artifacts/ujef-portfolio/dist/public
 
   deploy:
     environment:
