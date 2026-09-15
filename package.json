@@ -1,19 +1,24 @@
 {
-  "name": "workspace",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-  },
-  "private": true,
-  "dependencies": {
-    "@replit/connectors-sdk": "^0.4.3"
-  },
-  "devDependencies": {
-    "prettier": "^3.9.6",
-    "typescript": "~5.9.3"
-  }
+    "name": "workspace",
+    "version": "0.0.0",
+    "license": "MIT",
+    "scripts": {
+        "dev": "set PORT=5173&& set BASE_PATH=/&& pnpm --filter @workspace/ujef-portfolio dev",
+        "preview": "set PORT=4173&& set BASE_PATH=/&& pnpm --filter @workspace/ujef-portfolio serve",
+        "preinstall": "node -e \"const fs=require('fs'); for (const file of ['package-lock.json','yarn.lock']) fs.rmSync(file,{force:true}); if (!(process.env.npm_config_user_agent||'').startsWith('pnpm/')) { console.error('Use pnpm instead'); process.exit(1); }\"",
+        "build": "pnpm run typecheck && pnpm -r --if-present run build",
+        "typecheck:libs": "tsc --build",
+        "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+    },
+    "private": true,
+    "dependencies": {
+        "@replit/connectors-sdk": "^0.4.3"
+    },
+    "devDependencies": {
+        "@rollup/rollup-win32-x64-msvc": "4.63.1",
+        "@tailwindcss/oxide-win32-x64-msvc": "4.3.3",
+        "lightningcss-win32-x64-msvc": "1.32.0",
+        "prettier": "^3.9.6",
+        "typescript": "~5.9.3"
+    }
 }
