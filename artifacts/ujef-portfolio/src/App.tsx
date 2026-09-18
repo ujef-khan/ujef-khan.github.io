@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ArrowDown, ArrowUpRight, Check, Code2, Copy, Download, FileSpreadsheet, Linkedin, Mail, Menu, Moon, Phone, Sun, X } from 'lucide-react';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -32,7 +32,6 @@ const workbookProjects: Project[] = [
 
 const codingSkills = ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'React.js', 'Django', 'Basic Python', 'VS Code', 'Git / GitHub'];
 const excelSkills = ['VLOOKUP / XLOOKUP', 'INDEX-MATCH', 'Pivot Tables & Charts', 'Conditional Formatting', 'Data Validation', 'Dashboards & Reporting', 'VBA Macros', 'Power Query', 'Power Automate basics', 'ChatGPT / Copilot', 'Python openpyxl / pandas'];
-
 function SectionLabel({ children }: { children: ReactNode }) {
   return <div className="eyebrow">{children}</div>;
 }
@@ -55,6 +54,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (project: 
 }
 
 function Home() {
+  const starCanvasRef = useRef<HTMLCanvasElement>(null);
   const [track, setTrack] = useState<Track>('coding');
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -68,6 +68,106 @@ function Home() {
   });
   const [, setLocation] = useLocation();
   const projects = track === 'coding' ? codingProjects : excelProjects;
+
+  useEffect(() => {
+    const canvas = starCanvasRef.current;
+    const context = canvas?.getContext('2d');
+    if (!canvas || !context) return;
+
+    const particles = Array.from({ length: 84 }, (_, index) => ({
+      x: ((index * 47 + 17) % 101) / 100,
+      y: ((index * 71 + 11) % 97) / 100,
+      size: index % 13 === 0 ? 1.9 : index % 4 === 0 ? 1.35 : .8,
+      phase: index * 1.73,
+    }));
+    const pointer = { x: -1000, y: -1000, active: false };
+    let animationFrame = 0;
+
+    const resize = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      context.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    const handlePointerMove = (event: PointerEvent) => {
+      pointer.x = event.clientX;
+      pointer.y = event.clientY;
+      pointer.active = true;
+    };
+    const handlePointerLeave = () => {
+      pointer.active = false;
+    };
+    const draw = (time: number) => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      context.clearRect(0, 0, width, height);
+      const points = particles.map((particle) => {
+        const drift = Math.sin(time * .00035 + particle.phase) * 3;
+        const x = particle.x * width + drift;
+        const y = particle.y * height + Math.cos(time * .00028 + particle.phase) * 3;
+        return { ...particle, x, y, distance: Math.hypot(pointer.x - x, pointer.y - y) };
+      });
+      const nearby = pointer.active ? points.filter((point) => point.distance < 185) : [];
+
+      if (nearby.length) {
+        context.lineWidth = .75;
+        nearby.forEach((point) => {
+          const alpha = Math.max(.04, .3 - point.distance / 700);
+          context.beginPath();
+          context.moveTo(pointer.x, pointer.y);
+          context.lineTo(point.x, point.y);
+          context.strokeStyle = `rgba(255, 184, 97, ${alpha})`;
+          context.stroke();
+        });
+        nearby.forEach((point, pointIndex) => {
+          nearby.slice(pointIndex + 1).forEach((other) => {
+            const distance = Math.hypot(point.x - other.x, point.y - other.y);
+            if (distance > 125) return;
+            context.beginPath();
+            context.moveTo(point.x, point.y);
+            context.lineTo(other.x, other.y);
+            context.strokeStyle = `rgba(255, 198, 120, ${Math.max(.025, .2 - distance / 700)})`;
+            context.stroke();
+          });
+        });
+        context.beginPath();
+        context.arc(pointer.x, pointer.y, 2.4, 0, Math.PI * 2);
+        context.fillStyle = 'rgba(255, 214, 151, .9)';
+        context.shadowColor = 'rgba(255, 179, 82, .9)';
+        context.shadowBlur = 14;
+        context.fill();
+        context.shadowBlur = 0;
+      }
+
+      points.forEach((point) => {
+        const pulse = .42 + (Math.sin(time * .0012 + point.phase) + 1) * .2;
+        const activeBoost = point.distance < 185 ? .45 : 0;
+        context.beginPath();
+        context.arc(point.x, point.y, point.size + activeBoost * .7, 0, Math.PI * 2);
+        context.fillStyle = `rgba(224, 239, 231, ${Math.min(1, pulse + activeBoost)})`;
+        context.shadowColor = point.distance < 185 ? 'rgba(255, 187, 97, .95)' : 'rgba(166, 231, 211, .7)';
+        context.shadowBlur = point.distance < 185 ? 10 : 5;
+        context.fill();
+        context.shadowBlur = 0;
+      });
+      animationFrame = window.requestAnimationFrame(draw);
+    };
+
+    resize();
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    document.addEventListener('mouseleave', handlePointerLeave);
+    animationFrame = window.requestAnimationFrame(draw);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('mouseleave', handlePointerLeave);
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   const goTo = (id: string) => {
     setMenuOpen(false);
@@ -93,9 +193,9 @@ function Home() {
     }
     setSelectedProject(project);
   };
-
   return (
     <div className={`site-shell ${darkMode ? 'dark-theme' : ''}`}>
+      <canvas ref={starCanvasRef} className="star-canvas" aria-hidden="true" />
       <header className={`nav ${menuOpen ? 'is-open' : ''}`}>
         <div className="container-wide nav-inner">
           <button className="brand" type="button" onClick={() => goTo('top')} data-testid="button-home">

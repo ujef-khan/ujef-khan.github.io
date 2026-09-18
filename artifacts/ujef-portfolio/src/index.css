@@ -68,6 +68,29 @@ a {
     mix-blend-mode: multiply;
 }
 
+.site-shell>* {
+    position: relative;
+    z-index: 2;
+}
+
+.site-shell>.star-canvas {
+    position: fixed;
+    z-index: 1;
+}
+
+.star-canvas {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: .86;
+}
+
+.site-shell:not(.dark-theme) .star-canvas {
+    opacity: .32;
+    mix-blend-mode: multiply;
+}
+
 .container-wide {
     width: min(1180px, calc(100% - 48px));
     margin: 0 auto;
